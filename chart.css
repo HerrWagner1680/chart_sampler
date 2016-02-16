@@ -1,0 +1,335 @@
+body {
+
+margin: 0;
+	/* pattern bg from bg.siteorigin.com - a tool by SiteOrigin
+	- Patterns from Subtle Patterns */
+
+/*	source --- http://subtlepatterns.com/green-cup/
+	Made by Atle Mo.*/
+
+background-image: url("./background_patterns/green_cup.png");
+
+/*background-image: url("./background_patterns/pattern-8vco.png"); *//*XXXXXXXX*/
+/*Attribution — You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use
+subtlepatterns.com - and artist name */
+
+}
+
+#wrapper {
+	margin-left: 20px;
+}
+
+header {
+	z-index: 10;
+	opacity: 0.9;
+	position: fixed;
+	-webkit-transform: rotate(45deg);
+  	-moz-transform: rotate(45deg);
+  	-ms-transform: rotate(45deg);
+  	-o-transform: rotate(45deg);
+  	transform: rotate(45deg);
+	top:40px;
+	right: -55px;
+	background: #444;
+	border-right: 50px solid #444;
+	border-left: 50px solid #444;
+	padding-bottom: 0px;
+}
+
+
+.banner {
+	display: block;
+	height: 40px;
+	color: #ccc;
+}
+
+footer {
+	bottom: 0px;
+	background: #333;
+	text-decoration: none;
+}
+
+footer p {
+	padding: 5px;
+}
+
+p {
+	margin-top: 13px;
+}
+
+p #background_credit {
+	padding-right: 4px;
+	float: right;
+	color: #999;
+	font-style: italic;
+	font-family: sans-serif;
+	font-weight: lighter;
+	text-decoration: none;
+}
+
+#chart_div0 {
+	margin-top: 40px;
+}
+
+#chart_div0 svg {
+	border-top: 10px solid #777;
+	border-bottom: 10px solid #555;
+	border-left: 10px solid #666;
+	border-right: 10px solid #888;
+	outline: 5px solid #ccc;
+}
+
+div[dir=ltr] {
+	margin-left: auto;
+	margin-right: auto;
+	left: -25px;
+}
+
+#stack {
+	margin-left: 15px;
+}
+
+#chart_title {
+	margin-left: 2px;
+	width: 280px;
+}
+
+/*button {
+	margin: auto;
+	left: -25px;
+}*/
+
+#refresh {
+	font-size: 15px;
+	height: 40px;
+	width: 220px;
+	border-radius: 10px;
+	display: block;
+	margin-left: 80px;
+}
+
+#width_chart{
+	height: 30px;
+	width: 130px;
+	font-size: 15px;
+	margin-left: 40px;
+	border: 2px solid #ddd;
+}
+
+#height_chart{
+	height: 30px;
+	width: 135px;
+	font-size: 15px;
+	border: 2px solid #ddd;
+}
+
+h3 {
+	margin-left: 10px;
+	font-family: sans-serif;
+}
+
+/*#num_num_buttons {
+	margin-top: 10px;
+	display: inline-block;
+	min-width: 300px;
+}*/
+
+div #area1 {
+	display: inline-block;
+	min-width: 60px;
+	margin-top: 18px;
+}
+
+div #bar1 {
+	display: inline-block;
+	min-width: 123px;
+	margin-top: 18px;
+}
+
+div #step1 {
+	display: inline-block;
+	min-width: 60px;
+	margin-top: 18px;
+}
+
+div #col1 {
+	display: inline-block;
+	min-width: 86px;
+	margin-top: 18px;
+}
+
+div #line1 {
+	display: inline-block;
+	min-width: 58px;
+	margin-top: 18px;
+}
+
+div #donut1 {
+	display: inline-block;
+	min-width: 103px;
+	margin-top: 18px;
+}
+
+div #pie1 {
+	display: inline-block;
+	min-width: 77px;
+	margin-top: 18px;
+}
+
+div #scatter1 {
+	display: inline-block;
+	min-width: 79px;
+	margin-top: 18px;
+}
+
+div #lin1 {
+	display: inline-block;
+	min-width: 116px;
+	margin-top: 18px;
+}
+
+div #exp1 {
+	display: inline-block;
+	min-width: 154px;
+	margin-top: 18px;
+}
+
+div #poly1 {
+	display: inline-block;
+	min-width: 152px;
+	margin-top: 18px;
+}
+
+input[type="radio"] {
+	display:none;
+}
+
+input[type="radio"] + label {
+	margin-right: 4px;
+	padding: 6px 11px 6px 4px;
+	border-radius: 8px;
+}
+
+input[type="radio"]:checked + label {
+	background-color: #ADD8E6;
+/*	border-right: 4px solid #ADD8E6;*/
+}
+
+input[type="radio"]:disabled + label {
+	color: #BBB;
+	background-color: #444;
+/*	border-right: 4px solid #444;*/
+}
+
+input[type='radio'] + label span {
+    display:inline-block;
+}
+
+
+input[type="radio"]:disabled + label span .inner {
+	width: 30px;
+	height: 30px;
+	vertical-align: middle;
+
+	background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' height='30' width='30'><circle cx='15' cy='15' r='8' stroke='#333' stroke-width='3' fill='#888' /></svg>");
+    background-repeat: no-repeat;
+}
+
+input[type="radio"] + label span .inner {
+    width: 30px;
+	height: 30px;
+	vertical-align: middle;
+
+	background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' height='30' width='30'><circle cx='15' cy='15' r='8' stroke='#666' stroke-width='3' fill='#99c199' /></svg>");
+    background-repeat: no-repeat;
+}
+
+input[type="radio"]:checked + label span{
+	background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' height='30' width='30'><circle cx='15' cy='15' r='8' stroke='orange' stroke-width='3' fill='orange' /></svg>");
+    background-repeat: no-repeat;
+}
+
+h4{
+	margin-left: 0px;
+	font-family: sans-serif;
+}
+
+#rot label{
+	margin-left: 30px;
+	font-weight: lighter;
+	font-style: italic;
+	font-family: sans-serif;
+}
+
+/*#slider1 {
+	min-width: 304px;
+}
+#piehole1 {
+	min-width: 437px;
+}*/
+
+th {
+	max-width: 128px;
+	padding: 0px;
+}
+
+
+#data_form {
+	margin-left: 35px;
+}
+
+#url_upload {
+/*	margin-left: 15px;*/
+	width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#export {
+/*	margin-left: 15px;*/
+	width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#spreadsheet_file_1 {
+	width: 400px;
+}
+
+#credit {
+	color: #555;
+	font-style: italic;
+	font-family: sans-serif;
+	font-weight: lighter;
+	text-decoration: none;
+	text-align: center
+}
+
+#credit a {
+	color: #555;
+	font-style: italic;
+	font-family: sans-serif;
+	font-weight: lighter;
+	text-decoration: none;
+	margin-top: 5px
+}
+
+#credit #herrwagner {
+	display: inline-block;
+	min-width: 267px;
+}
+
+#credit #nycda {
+	display: inline-block;
+	min-width: 298px;
+}
+
+#credit #battlehorse {
+	display: inline-block;
+	min-width: 318px;
+}
+
+#credit #googlecharts {
+	display: inline-block;
+	min-width: 242px;
+}
