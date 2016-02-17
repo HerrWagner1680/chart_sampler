@@ -1,0 +1,19 @@
+making If into Ff numbers
+
+making Lf into Gf numbers
+
+          console.log(response.getDataTable()); // THIS SHOWS THE JSONP FEED
+          console.log(Object.keys(response.getDataTable()) );
+          console.log(response.getDataTable().Ff[0].label);
+          console.log(response.getDataTable().Ff[1].label);
+          //Ff[NUMBER].id is the column letter
+          //Ff[NUMBER].label is the column name
+          //Ff[NUMBER].type is the type: string or number
+          console.log(response.getDataTable().Gf.length )
+          console.log(response.getDataTable().Gf[0].c[0].v + " " +typeof response.getDataTable().Gf[0].c[0].v )
+          console.log(response.getDataTable().Gf[0].c[1].v + " " +typeof response.getDataTable().Gf[0].c[1].v)
+          console.log(response.getDataTable().Gf[1].c[0].v + " " +typeof response.getDataTable().Gf[1].c[0].v)
+
+          console.log(response.getDataTable().Gf[7].c[0].v + " " +typeof response.getDataTable().Gf[7].c[0].v)
+          console.log(response.getDataTable().Gf[7].c[1].v + " " +typeof response.getDataTable().Gf[7].c[1].v)
+          console.log(response.getDataTable().Gf[7].c.length + " c length")

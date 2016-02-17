@@ -1,0 +1,36 @@
+<html>
+<head>
+	<script type='text/javascript' src='https://www.google.com/jsapi'></script>
+	<script type='text/javascript'>
+
+	google.load('visualization', '1', {packages:['corechart']});
+	google.setOnLoadCallback(drawChart);
+
+	function drawChart() {
+		var data = google.visualization.arrayToDataTable([
+			['Axis 1','Axis 2'],
+			['a',23],
+			['b',14],
+			['c',45],
+			['d',23]
+		]);
+
+		var options = {
+			'title': 'INDEED',
+			vAxis: {title: 'Axis 1'},
+			hAxis: {title: 'Axis 2'},
+			     	'width': 100,
+			     	'height': 100,
+		};
+
+		var chart = new google.visualization.LineChart(document.getElementById('chart_material'));
+		chart.draw(data, options);
+	};
+
+	</script>
+</head>
+
+<body>
+	<div id='chart_material'></div>
+</body>
+</html>

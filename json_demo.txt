@@ -1,0 +1,27 @@
+
+https://script.google.com/macros/s/AKfycbxOLElujQcy1-ZUer1KgEvK16gkTLUqYftApjNCM_IRTL3HSuDk/exec?id=0AuAssa05Fog5dGc5WVNRbFZDcWJCLVY2V2NidWFKeXc&sheet=Sheet1
+
+
+https://docs.google.com/spreadsheets/d/11JbOkqEZN-FXuByRqxC37cPGGI9AP39zVNYZtl-ZlIk/edit?gid=0#gid=0
+
+
+https://script.google.com/macros/s/AKfycbxOLElujQcy1-ZUer1KgEvK16gkTLUqYftApjNCM_IRTL3HSuDk/exec?id=11JbOkqEZN-FXuByRqxC37cPGGI9AP39zVNYZtl-ZlIk&sheet=Sheet1
+
+https://script.googleusercontent.com/macros/echo?user_content_key=zylLPDycVwL3NV6R4UqSe7w8xnBpMBdV4XH1PEF1zzXuvsZ1uM_EzwJuaeirGNeu-orIDkvbysfeexVj0gn1fx36USorpl5eOJmA1Yb3SEsKFZqtv3DaNYcMrmhZHmUMWojr9NvTBuBLhyHCd5hHa1GhPSVukpSQTydEwAEXFXgt_wltjJcH3XHUaaPC1fv5o9XyvOto09QuWI89K6KjOu0SP2F-BdwUYdwrlvsxA_pTDFdx6oU6_tSg_Gn5ERezP-vwkSxjxAdCFP56yEspCV7W_mZ75tsZ5y7FLqOV0Tk27B8Rh4QJTQ&lib=MnrE7b2I2PjfH799VodkCPiQjIVyBAxva
+
+
+MACROS COURTESY OF:
+http://pipetree.com/qmacro/blog/2013/10/sheetasjson-google-spreadsheet-data-as-json/
+
+
+METALS CHART
+https://docs.google.com/spreadsheet/ccc?key=0AiFfbdok-kQKcENRYmV0ZC1DcHRIbndKRWZvOHRBTEE#gid=0
+
+JSON
+https://script.google.com/macros/s/AKfycbxOLElujQcy1-ZUer1KgEvK16gkTLUqYftApjNCM_IRTL3HSuDk/exec?id= the key is here  &sheet=Sheet1
+
+https://script.google.com/macros/s/AKfycbxOLElujQcy1-ZUer1KgEvK16gkTLUqYftApjNCM_IRTL3HSuDk/exec?id=0AiFfbdok-kQKcENRYmV0ZC1DcHRIbndKRWZvOHRBTEE&sheet=Sheet1
+
+NOTE - MACROS LINK WILL NOT WORK IN PROGRAM - GET ERROR
+
+

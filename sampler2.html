@@ -41,14 +41,14 @@
 
               var data = response.getDataTable();
 
-              console.log("column a direct" + data.If[0].label)
+              console.log("column a direct" + data.Ff[0].label)
 
               //NOTE - switch hAxis and vAxis if labels not
               // rendering to the right axis in chart for the sample chart
               var options = {
                 'title': ($('input[name=chart_title]').val()),
-                hAxis: {title: (data.If[0].label)},
-                vAxis: {title: (data.If[1].label)},
+                hAxis: {title: (data.Ff[0].label)},
+                vAxis: {title: (data.Ff[1].label)},
                           'width':500,
                           'height':400
                         };
@@ -272,8 +272,8 @@
 
 
 
-        // var jUrl = "http://docs.google.com/spreadsheet/ccc?key=0Atw2BTU52lOCdEZpUlVIdmxGOWZBR2tuLXhYN2dQTWc&usp=drive_web&gid=0#";
-        var jUrl = "https://docs.google.com/spreadsheet/tq?key=0Atw2BTU52lOCdEZpUlVIdmxGOWZBR2tuLXhYN2dQTWc&usp=drive_web&gid=0#gid=0"
+        // SIMPLE CHART
+        var jUrl = "http://docs.google.com/spreadsheet/ccc?key=0Atw2BTU52lOCdEZpUlVIdmxGOWZBR2tuLXhYN2dQTWc&usp=drive_web&gid=0#"
 
         //gathering data from upload url window
         function handleQueryResponse(response) {
@@ -290,9 +290,9 @@
           console.log(response.getDataTable().Gf[0].c[1].v + " " +typeof response.getDataTable().Gf[0].c[1].v)
           console.log(response.getDataTable().Gf[1].c[0].v + " " +typeof response.getDataTable().Gf[1].c[0].v)
 
-          console.log(response.getDataTable().Gf[7].c[0].v + " " +typeof response.getDataTable().Gf[7].c[0].v)
-          console.log(response.getDataTable().Gf[7].c[1].v + " " +typeof response.getDataTable().Gf[7].c[1].v)
-          console.log(response.getDataTable().Gf[7].c.length + " c length")
+          // console.log(response.getDataTable().Gf[7].c[0].v + " " +typeof response.getDataTable().Gf[7].c[0].v)
+          // console.log(response.getDataTable().Gf[7].c[1].v + " " +typeof response.getDataTable().Gf[7].c[1].v)
+          // console.log(response.getDataTable().Gf[7].c.length + " c length")
           //Gf[NUMBER].c.[NUMBER based on NUM of columns]
           //  then .v (shows value -- retaining string or number format)
 
@@ -319,21 +319,22 @@
           //pull from URL datatype string or number for first column
 
           //**** .val(data.If[0]) is throwing an error!!!
-          //  $("#dataType_col_a").val(data.If[0].type)
+            $("#dataType_col_a").val(data.Ff[0].type)
 
           //assign rest of column types as number
-          var If_num = 1
+          // changing If_num to Ff_num
+          var Ff_num = 1
           while(col_a_int +1 <= last_col_int){
               var col_letter = String.fromCharCode(col_a_int);
               $("#real-data #data_types #dataType_col_" + col_letter).attr("value", "number");
               col_a_int++;
-              If_num++;
+              Ff_num++;
           };
 
           datatypeConfirm();
 
             //resetting variables
-            var If_num = 0
+            var Ff_num = 0
             var col_a_int = 97;
             //ASSIGN column label names
 
@@ -344,14 +345,14 @@
                 var label_id = $("#real-data #label_col_" + col_letter);
 
                 // ** ALSO THROWING AN ERROR
-                  if (typeof(data.If[If_num]) !== 'undefined'){
-                      label_id.attr("value", data.If[If_num].label);
+                  if (typeof(data.Ff[Ff_num]) !== 'undefined'){
+                      label_id.attr("value", data.Ff[Ff_num].label);
                   } else {
                       console.log("label is undefined");
                       label_id.attr("value", "Column " + (col_letter).toUpperCase())
                   }
                 col_a_int++;
-                If_num++;
+                Ff_num++;
             };
          
           //uploading cell data from URL
@@ -364,11 +365,11 @@
                         var col_id = $("#real-data #cell_" + i + "_" + col_letter);
                       //check to see if data exists in corresponding cell in URL
                       //if it does exist, add data, if not, make value null
-                          if (typeof(data.Lf[i-1]) !== 'undefined'){
-                                if(typeof(data.Lf[i-1].c[c_num]) !== 'undefined'){
+                          if (typeof(data.Gf[i-1]) !== 'undefined'){
+                                if(typeof(data.Gf[i-1].c[c_num]) !== 'undefined'){
                                     // if(typeof(data.Nf[i-1].c[c_num].v) !== 'undefined'){
                                     //     console.log(data.Nf[i-1].c[c_num].v);
-                                        col_id.attr("value", data.Lf[i-1].c[c_num].v)
+                                        col_id.attr("value", data.Gf[i-1].c[c_num].v)
                                     // };
                                     console.log("line 328 --- If c is defined")
                                 } else {
