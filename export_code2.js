@@ -16,12 +16,10 @@ $(window).bind('keydown', function(event) {
 
 
 
-
-
 //NOTE - initial upload is still a draft
 //ONLY reads two columns and four rows
 
-function initialUploadCode (data) {
+function initialUploadCode(data) {
 
 	// // Pf[0].type is the data type for column 0
 	// // Pf[0].label is the label for column 0 
@@ -45,7 +43,7 @@ function initialUploadCode (data) {
 
 	//NOTE - THIS IS A TEMPORARY WORKAROUND
 	optionData = ([["		"] + ["var options = {"] + '\r' + ["			"] +
-			["'title': '" + chartTitle + "',"] + '\r' + ["			"] +
+			["title: '" + chartTitle + "',"] + '\r' + ["			"] +
 	    	["vAxis: {title: '" + label_col_a + "'},"] + '\r' + ["			"] +
 	    	["hAxis: {title: '" + label_col_b + "'},"] + '\r' + ["			"] +
 	    	["     	'width': " + chartWidth + ","] + '\r' + ["			"] +

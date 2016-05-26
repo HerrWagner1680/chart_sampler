@@ -1,6 +1,6 @@
-//BIG CHALLENGE FILLED WITH ERRORS DOCUMENT
+/* BIG CHALLENGE FILLED WITH ERRORS DOCUMENT
 https://docs.google.com/spreadsheets/d/1VARVG6QDRJlYHPTEWo9FH-cDOw4d0GdFXGQVhtRG7J8/pubhtml?gid=0&single=true
-
+*/
 
 document.getElementsByClassName('k')
 document.getElementsByClassName('s')
@@ -177,3 +177,8 @@ json.feed.entry[0][ttt[0]]["$t"]
 if (json.feed.entry[4] === undefined) {console.log("undef");}; // notes if ROWS out of data
 if (json.feed.entry[0][ttt[2]] === undefined) {console.log("undef");}; // notes if COLUMNS out of data
 
+
+
+//JSONP example of simple chart
+// https://spreadsheets.google.com/feeds/list/1eU5MVxA01hggvID2eX0Oa1SVTNUZo4AhDEKrjiSMDoA/od6/public/values?alt=json-in-script&callback=x
+// the x can be any variable you like

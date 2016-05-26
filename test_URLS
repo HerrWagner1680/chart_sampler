@@ -59,7 +59,11 @@ https://docs.google.com/spreadsheet/tq?key=
 #gid=0
 
 
+JSONP example of simple chart
+  https://spreadsheets.google.com/feeds/list/1eU5MVxA01hggvID2eX0Oa1SVTNUZo4AhDEKrjiSMDoA/od6/public/values?alt=json-in-script&callback=x
+the x can be any variable you like
 
-
+PNG DOWNLOAD EXAMPLE
+http://stackoverflow.com/questions/6045603/name-a-png-file-saved-from-canvas-using-an-open-with-dialog
 
 
