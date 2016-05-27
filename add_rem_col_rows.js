@@ -8,9 +8,9 @@ $('#add_col').click(function() {
     var next_col_int = last_col_int +1;
     var next_col = String.fromCharCode(next_col_int);
     var next_row = last_row + 1;
-    console.log("next col " + next_col);
+    /* console.log("next col " + next_col);
     console.log(last_col_int);
-    console.log(next_col_int);
+    console.log(next_col_int); */
 
     $('#real-data #labels').append("<th><input type='text' id='label_col_" + next_col + 
         "' name='label_col_" + next_col + "' value='Column " + (next_col).toUpperCase() + "'></th>");
@@ -70,7 +70,7 @@ $('#donut2, #pie2, #scatter2, #lin2, #exp, #poly2').click(function(){
     if (last_col_int >= 99) {
         while(col_c_integer <= last_col_int) {
             var X = String.fromCharCode(col_c_integer);
-            console.log("in the loop " + X);
+            //console.log("in the loop " + X);
             $('select[id$="'+ X +'"]').css({"border":"2px solid #ddd", "color":"#aaa"})
             $('input[id$="'+ X +'"]').css({"border":"2px solid #ddd", "color":"#aaa"})
             col_c_integer++;
@@ -89,13 +89,13 @@ $('#area2, #bar2, #step2, #line2, #col2').click(function(){
     var next_row = last_row + 1;
     var col_c_integer = 98;
 
-    console.log("CLICK COLOR - next_row: " + next_row);
+    /* console.log("CLICK COLOR - next_row: " + next_row);
     console.log("CLICK COLOR - last_col_int: " + last_col_int);
-    console.log("CLICK COLOR - next_col: " + next_col);
+    console.log("CLICK COLOR - next_col: " + next_col); */
     if (last_col_int >= 99) {
         while(col_c_integer <= last_col_int) {
             var X = String.fromCharCode(col_c_integer);
-            console.log("in the loop " + X);
+            //console.log("in the loop " + X);
             $('select[id$="'+ X +'"]').css({"border":"1px solid #A6A6A6", "color":"black"});
             $('input[id$="'+ X +'"]').css({"border":"2px inset", "color":"initial"});
             col_c_integer++;
@@ -130,7 +130,7 @@ $('#row_add').click(function() {
     var next_col = String.fromCharCode(next_col_int);
     var next_row = last_row + 1;
 
-    console.log("next row:" + next_row);
+    //console.log("next row:" + next_row);
 
     //create empty new table row
     $("#real-data").append("<tr id='row_" + next_row + "'></td>");
@@ -139,8 +139,8 @@ $('#row_add').click(function() {
 
     while(col_a_int <= last_col_int){
         var col_letter = String.fromCharCode(col_a_int);
-        console.log("col letter " + col_letter);
-        console.log("next_row " + next_row);
+        //console.log("col letter " + col_letter);
+        //console.log("next_row " + next_row);
         $("#real-data tr:last-of-type").append("<td class='col_" + col_letter + 
           "'><input type='text' id='cell_" + next_row + "_" + col_letter + 
           "' name='cell_" + next_row + "_" + col_letter +"' value=''></td>");

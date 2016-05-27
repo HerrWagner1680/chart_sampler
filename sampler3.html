@@ -6,16 +6,6 @@
       <link rel="stylesheet" type="text/css" href="chart.css">
       <title>CHART SAMPLER</title>
 
-      <!-- lines 9 - 13 COURTESY OF BATTLEHORSE GITHUB PROJECT -->
-      <!-- CORRECTION: http://stackoverflow.com/questions/6660498/can-google-visualization-pie-chart-output-to-a-png-image/16137983#16137983 -->
-
-      <!-- rgbcolor.js and convg.js no longer working as of May 2016 -->
-      <!-- script type="text/javascript" src="https://canvg.googlecode.com/svn/trunk/rgbcolor.js"></script> 
-      <script type="text/javascript" src="https://canvg.googlecode.com/svn-history/r157/trunk/canvg.js"></script> -->
-
-      <script type="text/javascript" src="battlehorse_png_download.js"></script>
-      <!-- END OF BATTEHORSE PNG DOWNLOAD JS FILES -->
-
       <!-- JQUERY -->
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
       <!-- STATIC VERSION OF GOOGLE CHARTS -->
@@ -47,8 +37,8 @@
 
               var data = response.getDataTable();
 
-              console.log(data);
-              console.log("column a label: " + data.Ff[0].label);
+              //console.log(data);
+              //console.log("column a label: " + data.Ff[0].label);
               handleQueryResponse(response);
               //handlequeryresponse populates columns and rows with text
 
@@ -297,27 +287,22 @@
 
         //gathering data from upload url window
         function handleQueryResponse(response) {
-          //x = {};
-          console.log(response.getDataTable()); // THIS SHOWS THE JSONP FEED
+          /*
           console.log(Object.keys(response.getDataTable()) );
           console.log(response.getDataTable().Ff[0].label);
-          console.log(response.getDataTable().Ff[1].label);
+          console.log(response.getDataTable().Ff[1].label); */
           //Ff[NUMBER].id is the column letter
           //Ff[NUMBER].label is the column name
           //Ff[NUMBER].type is the type: string or number
           //GF[ROW NUMBER].c[COLUMN NUMBER].v is value
-          console.log(response.getDataTable().Gf.length )
+          /*console.log(response.getDataTable().Gf.length )
           console.log(response.getDataTable().Gf[0].c[0].v + " " +typeof response.getDataTable().Gf[0].c[0].v )
           console.log(response.getDataTable().Gf[0].c[1].v + " " +typeof response.getDataTable().Gf[0].c[1].v)
-          console.log(response.getDataTable().Gf[1].c[0].v + " " +typeof response.getDataTable().Gf[1].c[0].v)
+          console.log(response.getDataTable().Gf[1].c[0].v + " " +typeof response.getDataTable().Gf[1].c[0].v)*/
 
           // console.log(response.getDataTable().Gf[7].c[0].v + " " +typeof response.getDataTable().Gf[7].c[0].v)
-          // console.log(response.getDataTable().Gf[7].c[1].v + " " +typeof response.getDataTable().Gf[7].c[1].v)
-          // console.log(response.getDataTable().Gf[7].c.length + " c length")
           //Gf[NUMBER].c.[NUMBER based on NUM of columns]
           //  then .v (shows value -- retaining string or number format)
-
-         // console.log(response.getDataTable().If[0].label);
 
             if (response.isError()) {
               alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
@@ -334,8 +319,8 @@
             var next_row = last_row + 1;
             var col_a_int = 97;
 
-            console.log("last_col line 256: " + last_col);
-            console.log("next_col line 257: " + next_col);
+            /*console.log("last_col line 256: " + last_col);
+            console.log("next_col line 257: " + next_col); */
 
           //pull from URL datatype string or number for first column
 
@@ -392,13 +377,13 @@
                                     //     console.log(data.Nf[i-1].c[c_num].v);
                                         col_id.attr("value", data.Gf[i-1].c[c_num].v)
                                     // };
-                                    console.log("line 380 --- If c is defined")
+                                    //console.log("line 380 --- If c is defined")
                                 } else {
-                                    console.log("line 382 ---- If c is not defined")
+                                    //console.log("line 382 ---- If c is not defined")
                                     col_id.val(null)
                                 }
                           } else {
-                              console.log("line 386 ---- If is not defined")
+                              //console.log("line 386 ---- If is not defined")
                               col_id.val(null)
                           }
                     };
@@ -407,6 +392,12 @@
             }; // END OF col_a_int while loop
         } // END OF function handleQueryResponse(response)
 
+        function SheetRefresh() { 
+            console.log("showing jUrl: " + jUrl);
+            var query = new google.visualization.Query(jUrl);
+            //var query = new google.visualization.arrayToDataTable(jUrl);
+            query.send(handleQueryResponse);
+        }
 
         function ExampleJS(){
           	event.preventDefault();
@@ -421,9 +412,11 @@
               // var splitURL = jUrl.split("/");
               // console.log(splitURL);
               $('#spreadsheet_file_1').val(null) //clears the upload url window
+              SheetRefresh();
             }
          }
 
+        SheetRefresh();
 
     </script>
     <!-- script type="text/javascript" src="revised.js"></script -->

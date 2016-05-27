@@ -1,74 +1,80 @@
        // Using version 42 of static GOOGLE CHARTS 
-        google.charts.load('42', {packages: ['corechart']});
-        google.charts.setOnLoadCallback(createPNG);
+        //google.charts.load('42', {packages: ['corechart']});
+        //google.charts.setOnLoadCallback(createPNG);
         //google.charts.setOnLoadCallback(drawsamplerChart);
 
+    function makeOptionsGlobal(data, options, chartType) {
+      //console.log("make Options Global: data: " + data);
+      //console.log("make Options Global: options: " + options);
+      //console.log("make Options Global: chartType: " + chartType);
+      data_Global = data;
+      options_Global = options;
+      chart_type_Global = chartType;
+    }
 
 
     function createPNG() {
 
-      // var data = google.visualization.arrayToDataTable([
-      //   ['Element', 'Density', { role: 'style' }],
-      //   ['Copper', 8.94, '#b87333', ],
-      //   ['Silver', 10.49, 'silver'],
-      //   ['Gold', 19.30, 'gold'],
-      //   ['Platinum', 21.45, 'color: #e5e4e2' ]
-      // ]);
-      var data = google.visualization.arrayToDataTable([
-          ['Name', 'Length'],
-          ['A', 23],
-          ['B ', 16],
-          ['C', 10],
-          ['D', 31]
-      ]);
+      // Starting example default
+      if (typeof data_Global === "undefined") { 
+          data_Global = google.visualization.arrayToDataTable([
+            ['Name', 'Length'],
+            ['A', 23],
+            ['B ', 16],
+            ['C', 10],
+            ['D', 31]
+          ]);
 
-      var options = {
-          title: 'Title',
-          vAxis: {title: 'Name'},
-          hAxis: {title: 'Length'},
-                'width': 500,
-                'height': 400,
+          options_Global = {
+            title: 'Title',
+            vAxis: {title: 'Name'},
+            hAxis: {title: 'Length'},
+                  'width': 500,
+                  'height': 400,
+          };
       };
 
+    
+      //ASSIGNING METHOD NAMES FOR EACH GOOGLE CHART
+      var areachart = new google.visualization.AreaChart(document.getElementById('chart_div'));
+      var barchart = new google.visualization.BarChart(document.getElementById('chart_div'));
+      var stepchart = new google.visualization.SteppedAreaChart(document.getElementById('chart_div'));
+      var columnchart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+      var linechart = new google.visualization.LineChart(document.getElementById('chart_div'));
+      var piechart = new google.visualization.PieChart(document.getElementById('chart_div'));
+      var scatterchart = new google.visualization.ScatterChart(document.getElementById('chart_div'));
 
-      //console.log("bigarray " + bigArrayForExport);
-      //console.log("option data " + optionDataPNG );
-      //var data = google.visualization.arrayToDataTable([bigArrayForExport]);
-      //var options = {optionDataPNG};
+      // setting default valueif undefined
+      if (typeof chart_type_Global === "undefined") { chart_type_Global = columnchart; new_chart_global = columnchart; };
 
-      // var options = {
-      //   title: "Density of Precious Metals, in g/cm^3",
-      //   bar: {groupWidth: '95%'},
-      //   legend: 'none',
-      // };
-      //var chartTitle = $('input[name=chart_title]').val();
+      if (chart_type_Global === "areachart") { new_chart_global = areachart };
+      if (chart_type_Global === "barchart") { new_chart_global = barchart };
+      if (chart_type_Global === "stepchart") { new_chart_global = stepchart };
+      if (chart_type_Global === "columnchart") { new_chart_global = columnchart };
+      if (chart_type_Global === "linechart") { new_chart_global = linechart };
+      if (chart_type_Global === "piechart") { new_chart_global = piechart };
+      if (chart_type_Global === "scatterchart") { new_chart_global = scatterchart };
 
-      var chart_div = document.getElementById('chart_div');
-      var chart = new google.visualization.ColumnChart(chart_div);
 
-      // Wait for the chart to finish drawing before calling the getImageURI() method.
-      google.visualization.events.addListener(chart, 'ready', function () {
-        chart_div.innerHTML = '<img src="' + chart.getImageURI() + '">';
-        //console.log(chart_div.innerHTML);
-        //console.log(chart.getImageURI())
+          // Wait for the chart to finish drawing before calling the getImageURI() method.
+          google.visualization.events.addListener(new_chart_global, 'ready', function () {
+            chart_div.innerHTML = '<img src="' + new_chart_global.getImageURI() + '">';
 
-        var yada = $('input[name=chart_title]').val();
-        //var shlub_jpg = document.getElementById("the_link_jpg");
-        var shlub_png = document.getElementById("the_link_png");
-        //shlub_jpg.href = chart.getImageURI();
-        shlub_png.href = chart.getImageURI();
-        //shlub_jpg.download = yada + ".jpg"
-        shlub_png.download = yada + ".png"
-      });
+            //console.log(chart_div.innerHTML);
+            //console.log(chart.getImageURI())
 
-      chart.draw(data, options);
+            var yada = $('input[name=chart_title]').val();
+            //var shlub_jpg = document.getElementById("the_link_jpg");
+            var shlub_png = document.getElementById("the_link_png");
+            //shlub_jpg.href = chart.getImageURI();
+            shlub_png.href = new_chart_global.getImageURI();
+            //shlub_jpg.download = yada + ".jpg"
+            shlub_png.download = yada + ".png"
+          });
+
+      //chart.draw(data, options);
+      new_chart_global.draw(data_Global, options_Global)
 
       document.getElementById("the_link_png").click()
-      // var a_elem = document.createElement('a');
-      // a_elem.href = chart.getImageURI();
-      // a_elem.download = yada + ".png";
-      // document.body.appendChild(a_elem);
-      // a_elem.click();
-      // document.body.removeChild(a_elem);
 
   };

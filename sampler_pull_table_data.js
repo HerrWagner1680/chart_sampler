@@ -85,6 +85,8 @@ function pieRefresh(deg, hole) {
 	          is3D: three_dee,
 			};
 	piechart.draw(data, options);
+	var chart_p = "piechart";
+	makeOptionsGlobal(data, options, chart_p);
 
 	// if(typeof(bigArrayForExport=='undefined')){ bigArrayForExport=[]}
 
@@ -92,7 +94,7 @@ function pieRefresh(deg, hole) {
 }
 
 function revise(){
-	console.log("running REVISE - sampler9jan2")
+	//console.log("running REVISE - sampler9jan2")
 
 	datatypeConfirm();
 
@@ -116,7 +118,7 @@ function stackedCheckboxAppears() {
     $("#height_chart").after("<input id='stack' type='checkbox' name='stacked_column' value='true'></input><label id='stack2'for='stack'>stacked columns</label>");
 
     $("#stack, #stack2").bind('click', function(){
-      console.log("stackclick");
+      //console.log("stackclick");
       check = true
       // drawChartTest();
       //note - i did try reviseColumn() - but said it was undefined
@@ -147,7 +149,7 @@ function refreshing(){
 
 //CHECK FOR "IGNORE" data types and somehow remove them
 
-	console.log("refresh")
+	//console.log("refresh")
 
 	//REMOVE ANY RANGE SLIDERS
 	$("#rot").remove();
@@ -177,7 +179,7 @@ function refreshing(){
 	    // console.log("line 193 last_col " + last_col);
 	    var last_col_int = last_col.charCodeAt(0);
 
-	  	console.log("line 197 last_col_int " + last_col_int)
+	  	//console.log("line 197 last_col_int " + last_col_int)
 
 		var chType = $('input[name=chart_type]:radio:checked').val();
 	  	if (chType=="donut"|chType=="pie"|chType=="scatter"|chType=="trend_lin"|chType=="trend_exp"|chType=="trend_poly"){
@@ -193,12 +195,12 @@ function refreshing(){
 			strLabel.push("'"+labelll+"'");
 			// var lab = $("#real-data select[name=dataType_col_" + col_letter + "]").val(data.Pf[pf_num].type);
 			var lab = $("#real-data select[name=dataType_col_" + col_letter + "]").val();
-			console.log("var label: " + lab); //result should be number
+			//console.log("var label: " + lab); //result should be number
 			col_b_num++;
 			// pf_num++;
 		};
 
-		console.log("line 238 grandLabel " + grandLabel); // ARRAY OF LABELS
+		//console.log("line 238 grandLabel " + grandLabel); // ARRAY OF LABELS
 
 	    var last_row = parseInt($('#real-data tr:last-of-type').attr('id').split('_')[1]);
 		var num_of_rows = last_row;
@@ -244,7 +246,7 @@ function refreshing(){
 		  			}
 	            };//END OF FOR LOOP
 
-	    	console.log("str_col_array " + str_col_array);	//THE WINNER
+	    	//console.log("str_col_array " + str_col_array);	//THE WINNER
 			str_col_array.push(somekind_of_array_float);
 
 	        col_b_num++;
@@ -255,11 +257,12 @@ function refreshing(){
 
 		console.log("num_of_rows: " + num_of_rows);
 		console.log("num_of_cols: " + num_of_cols);
-		console.log("LINE 302 - check: " + check);
-		console.log("OUT OF LOOP str_col_array " + str_col_array);
+		//console.log("LINE 302 - check: " + check);
+		//console.log("OUT OF LOOP str_col_array " + str_col_array);
 		console.log("stringy_string_array " + stringy_string_array);
 
-		var kitchenSink = [] // CREATING THE ARRAY OF ARRAYS
+		kitchenSink = [] // CREATING THE ARRAY OF ARRAYS
+		// kitchenSink is global so createPNG function can read it
 		var bigArrayForExport = []
 	 	kitchenSink.push(grandLabel);
 	 	bigArrayForExport.push("\r			["+strLabel+"]");
@@ -286,11 +289,12 @@ function refreshing(){
 		// shoving all arrays (kitchenSink) into google vis DataTable
 
 		console.log("KITCHENSINK " + kitchenSink);
+		console.log("K sink[2]" + kitchenSink[2]);
 		console.log("bigArrayForExport " + bigArrayForExport);
-		console.log("data " + data);
-		console.log("check " + check);
-		console.log("deg " + deg);
-		console.log("hole " + hole);
+		//console.log("data " + data);
+		//console.log("check " + check);
+		//console.log("deg " + deg);
+		//console.log("hole " + hole);
 
 		drawNewChart(data, check, deg, hole, bigArrayForExport); 
 		bigArrayForExport.push(drawNewChart);
@@ -321,8 +325,8 @@ function refreshing(){
 			var aaa = parseFloat($('#real-data input[name=cell_' + i + '_a').val());
 			var bbb = parseFloat($('#real-data input[name=cell_' + i + '_b').val());
 
-			console.log("aaa " + aaa);
-			console.log("bbb " + bbb);
+			//console.log("aaa " + aaa);
+			//console.log("bbb " + bbb);
 			if (isNaN(aaa)==true) {
 				$('#real-data input[name=cell_' + i + '_a').css({"border":"2px solid red", "color":"red"});
 					alert("Data in first column must begin with a number," + '\r' + "or a minus sign followed by a number.");
@@ -366,7 +370,7 @@ function refreshing(){
             console.log("line 244 col b" + parseInt($('#real-data input[name=cell_' + i + '_b').val()));
 		}
 		// findOptionCode(data, chartType, check, deg, hole);
-		drawNewChart(data, check, deg, hole, bigArrayForExport); 
+		drawNewChart(data, check, deg, hole, bigArrayForExport);
 
 	} else {
 		console.log("col a: " + $('#real-data select[name=dataType_col_a]').val())

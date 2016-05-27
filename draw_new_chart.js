@@ -24,11 +24,11 @@ function drawNewChart(data, check, deg, hole, bigArrayForExport) {
 
 	var chartType = $('input[name=chart_type]:radio:checked').val();
 	// exportCode (data, chartType, check);
-	console.log("about to run optioncode function");
+	//console.log("about to run optioncode function");
 
 	// findOptionCode(data, chartType, check, deg, hole, bigArrayForExport);
 
-	console.log("done with option code function");
+	//console.log("done with option code function");
 	var last_row = parseInt($('#real-data tr:last-of-type > td:last-of-type > input').attr('id').split('_')[1]);
 
 //ASSIGNING METHOD NAMES FOR EACH GOOGLE CHART
@@ -62,11 +62,13 @@ function drawNewChart(data, check, deg, hole, bigArrayForExport) {
 			console.log("area switch"); 
 			findOptionCode(data, chartType, check, deg, hole, bigArrayForExport);
 			areachart.draw(data, options);
+			makeOptionsGlobal(data, options, "areachart");
 			break;
 		case "bar":
 			console.log("bar switch"); 
 			findOptionCode(data, chartType, check, deg, hole, bigArrayForExport);
 			barchart.draw(data, options);
+			makeOptionsGlobal(data, options, "barchart");
 			break;
 		case "step":
 			//switch labels
@@ -80,6 +82,7 @@ function drawNewChart(data, check, deg, hole, bigArrayForExport) {
 			console.log("step switch"); 
 			findOptionCode(data, chartType, check, deg, hole, bigArrayForExport);
 			stepchart.draw(data, options);
+			makeOptionsGlobal(data, options, "stepchart");
 			break;
 		case "column":
 			if (check == "missing") {
@@ -94,6 +97,7 @@ function drawNewChart(data, check, deg, hole, bigArrayForExport) {
 				console.log("column switch - no checkbox"); 
 				findOptionCode(data, chartType, check, deg, hole, bigArrayForExport);
 				columnchart.draw(data, options);
+				makeOptionsGlobal(data, options, "columnchart");
 				break;
 			} else {
 				stackedCheckboxAppears();
@@ -110,6 +114,7 @@ function drawNewChart(data, check, deg, hole, bigArrayForExport) {
 				console.log("column switch - with checkbox"); 
 				findOptionCode(data, chartType, check, deg, hole, bigArrayForExport);
 				columnchart.draw(data, options);
+				makeOptionsGlobal(data, options, "columnchart");
 				break;
 			} 
 		case "line":
@@ -124,6 +129,7 @@ function drawNewChart(data, check, deg, hole, bigArrayForExport) {
 			console.log("line switch"); 
 			findOptionCode(data, chartType, check, deg, hole, bigArrayForExport);
 			linechart.draw(data, options);
+			makeOptionsGlobal(data, options, "linechart");
 			break;
 
 	//NOTE donut covers regular pie chart and donut chart with range sliders
@@ -160,6 +166,7 @@ function drawNewChart(data, check, deg, hole, bigArrayForExport) {
 			findOptionCode(data, chartType, check, deg, hole, bigArrayForExport);
 			//NOTE - piehole does not work in 3d mode
 			piechart.draw(data, options);
+			makeOptionsGlobal(data, options, "piechart");
 			break
 
 	//NOTE case pie is 3d pie - only has one range slider
@@ -191,6 +198,7 @@ function drawNewChart(data, check, deg, hole, bigArrayForExport) {
 
 			findOptionCode(data, chartType, check, deg, hole, bigArrayForExport);
 			piechart.draw(data, options);
+			makeOptionsGlobal(data, options, "piechart");
 			break;
 
 		case "scatter":
@@ -204,6 +212,7 @@ function drawNewChart(data, check, deg, hole, bigArrayForExport) {
 			};
 			findOptionCode(data, chartType, check, deg, hole, bigArrayForExport);
 		    scatterchart.draw(data, options);   // str/val ONLY
+			makeOptionsGlobal(data, options, "scatter");
 			break;
 		case "trend_lin":
 			console.log("trend_lin switch");
@@ -221,6 +230,7 @@ function drawNewChart(data, check, deg, hole, bigArrayForExport) {
 				};
 			findOptionCode(data, chartType, check, deg, hole, bigArrayForExport);
 		    scatterchart.draw(data, options);   // str/val ONLY
+			makeOptionsGlobal(data, options, "scatterchart");
 			break;	
 		case "trend_exp":
 			console.log("trend_exp switch");
@@ -238,6 +248,7 @@ function drawNewChart(data, check, deg, hole, bigArrayForExport) {
 				};
 			findOptionCode(data, chartType, check, deg, hole, bigArrayForExport);
 		    scatterchart.draw(data, options);   // str/val ONLY
+			makeOptionsGlobal(data, options, "scatterchart");
 			break;
 		case "trend_poly":
 			var options = {
@@ -255,7 +266,8 @@ function drawNewChart(data, check, deg, hole, bigArrayForExport) {
 				};
 			findOptionCode(data, chartType, check, deg, hole, bigArrayForExport);
 			scatterchart.draw(data, options);   // str/val ONLY
-			console.log("trend_poly switch");
+			makeOptionsGlobal(data, options, "scatterchart");
+			//console.log("trend_poly switch");
 			break;
 		default:
 	        console.log('default');

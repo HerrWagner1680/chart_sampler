@@ -51,12 +51,20 @@ function initialUploadCode(data) {
 	   		["     	'height': " + chartHeight + ","] + '\r' + ["		"] +
 	        ["};"] + '\r']);
 
-	optionDataPNG = ([[ '\r' + ["			"] + "title: '" + chartTitle + "',"] + '\r' + ["			"] +
-	    	["vAxis: {title: '" + label_col_a + "'},"] + '\r' + ["			"] +
-	    	["hAxis: {title: '" + label_col_b + "'},"] + '\r' + ["			"] +
-	    	["     	'width': " + chartWidth + ","] + '\r' + ["			"] +
-	   		["     	'height': " + chartHeight + ","] + '\r' + ["		"] +
-	        ["};"] + '\r']);
+	optionDataPNG = {
+          title: 'Title',
+          vAxis: {title: 'Name'},
+          hAxis: {title: 'Length'},
+                'width': 500,
+                'height': 400,
+	}
+
+	// optionDataPNG = ([[ '\r' + ["			"] + "title: '" + chartTitle + "',"] + '\r' + ["			"] +
+	//     	["vAxis: {title: '" + label_col_a + "'},"] + '\r' + ["			"] +
+	//     	["hAxis: {title: '" + label_col_b + "'},"] + '\r' + ["			"] +
+	//     	["     	'width': " + chartWidth + ","] + '\r' + ["			"] +
+	//    		["     	'height': " + chartHeight + ","] + '\r' + ["		"] +
+	//         ["};"] + '\r']);
 
 	//NOTE - THIS IS A TEMPORARY WORKAROUND
 	bigArrayForExport = ([ '\r' + 
