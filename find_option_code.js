@@ -29,7 +29,7 @@ function findOptionCode(data, chartType, check, deg, hole, bigArrayForExport) {
 		case "column":		
 			if (check == "missing") {
 				optionData = ([["		"] + ["var options = {"] + '\r' + ["			"] +
-					["'title': '" + chartTitle + "',"] + '\r' + ["			"] +
+					["title: '" + chartTitle + "',"] + '\r' + ["			"] +
 					["hAxis: {title: '" + label_col_a + "'},"] + '\r' + ["			"] +
 					["vAxis: {title: '" + label_col_b + "'},"] + '\r' + ["			"] +
 					["'width': " + chartWidth + ","] + '\r' + ["			"] +
@@ -41,7 +41,7 @@ function findOptionCode(data, chartType, check, deg, hole, bigArrayForExport) {
  			} else {
 // 				// stackedCheckboxAppears();
 				optionData = ([["		"] + ["var options = {"] + '\r' + ["			"] +
-					["'title': '" + chartTitle + "',"] + '\r' + ["			"] +
+					["title: '" + chartTitle + "',"] + '\r' + ["			"] +
 					["hAxis: {title: '" + label_col_a + "'},"] + '\r' + ["			"] +
 					["vAxis: {title: '" + label_col_b + "'},"] + '\r' + ["			"] +
 					["'width': " + chartWidth + ","] + '\r' + ["			"] +
@@ -93,7 +93,7 @@ function findOptionCode(data, chartType, check, deg, hole, bigArrayForExport) {
  		case "trend_lin":
 // 			console.log("trend_lin switch");
  			optionData = ([["		"] + ["var options = {"] + '\r' + ["			"] +
-				["'title': '" + chartTitle + "',"] + '\r' + ["			"] +
+				["title: '" + chartTitle + "',"] + '\r' + ["			"] +
 			    ["vAxis: {title: '" + label_col_a + "', minValue: " + min_a + ", maxValue: " + max_a + "},"] + '\r' + ["			"] +
 			    ["hAxis: {title: '" + label_col_b + "', minValue: " + min_b + ", maxValue: " + max_b + "},"] + '\r' + ["			"] +
 	            [" 	'width': '" + chartWidth + "',"] + '\r' + ["			"] +
@@ -110,7 +110,7 @@ function findOptionCode(data, chartType, check, deg, hole, bigArrayForExport) {
  		case "trend_exp":
 // 			console.log("trend_exp switch");
  			optionData = ([["		"] + ["var options = {"] + '\r' + ["			"] +
-				["'title': '" + chartTitle + "',"] + '\r' + ["			"] +
+				["title: '" + chartTitle + "',"] + '\r' + ["			"] +
 			    ["vAxis: {title: '" + label_col_a + "', minValue: " + min_a + ", maxValue: " + max_a + "},"] + '\r' + ["			"] +
 			    ["hAxis: {title: '" + label_col_b + "', minValue: " + min_b + ", maxValue: " + max_b + "},"] + '\r' + ["			"] +
 	            [" 	'width': " + chartWidth + ","] + '\r' + ["			"] +
@@ -125,7 +125,7 @@ function findOptionCode(data, chartType, check, deg, hole, bigArrayForExport) {
 
  		case "trend_poly":
  			optionData = ([["		"] + ["var options = {"] + '\r' + ["			"] +
-				["'title': '" + chartTitle + "',"] + '\r' + ["			"] +
+				["title: '" + chartTitle + "',"] + '\r' + ["			"] +
 			    ["vAxis: {title: '" + label_col_a + "', minValue: " + min_a + ", maxValue: " + max_a + "},"] + '\r' + ["			"] +
 			    ["hAxis: {title: '" + label_col_b + "', minValue: " + min_b + ", maxValue: " + max_b + "},"] + '\r' + ["			"] +
 	            [" 	'width': " + chartWidth + ","] + '\r' + ["			"] +
@@ -141,7 +141,7 @@ function findOptionCode(data, chartType, check, deg, hole, bigArrayForExport) {
  		default:
 // 	        console.log('default');
  			optionData = ([["		"] + ["var options = {"] + '\r' + ["			"] +
-				["'title': '" + chartTitle + "',"] + '\r' + ["			"] +
+				["title: '" + chartTitle + "',"] + '\r' + ["			"] +
 		    	["vAxis: {title: '" + label_col_a + "'},"] + '\r' + ["			"] +
 		    	["hAxis: {title: '" + label_col_b + "'},"] + '\r' + ["			"] +
 	        	["     	'width': " + chartWidth + ","] + '\r' + ["			"] +

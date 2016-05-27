@@ -15,7 +15,7 @@ function drawNewChart(data, check, deg, hole, bigArrayForExport) {
 	var stack = $('input[id=stack]:checkbox:checked').val();
 
 	var options = {
-			'title': ($('input[name=chart_title]').val()),
+			title: ($('input[name=chart_title]').val()),
 		    vAxis: {title: ($('#real-data input[name=label_col_a]').val())},
 		    hAxis: {title: ($('#real-data input[name=label_col_b]').val())},
 	              	'width':wid,

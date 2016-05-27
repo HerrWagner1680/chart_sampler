@@ -8,7 +8,8 @@ $(window).bind('keydown', function(event) {
       		break;
 		case 'p':
             // event.preventDefault();
-            saveAsImg(document.getElementById('chart_div0'));
+            //saveAsImg(document.getElementById('chart_div0'));
+            createPNG();
             break;
         }
     }
@@ -44,6 +45,13 @@ function initialUploadCode(data) {
 	//NOTE - THIS IS A TEMPORARY WORKAROUND
 	optionData = ([["		"] + ["var options = {"] + '\r' + ["			"] +
 			["title: '" + chartTitle + "',"] + '\r' + ["			"] +
+	    	["vAxis: {title: '" + label_col_a + "'},"] + '\r' + ["			"] +
+	    	["hAxis: {title: '" + label_col_b + "'},"] + '\r' + ["			"] +
+	    	["     	'width': " + chartWidth + ","] + '\r' + ["			"] +
+	   		["     	'height': " + chartHeight + ","] + '\r' + ["		"] +
+	        ["};"] + '\r']);
+
+	optionDataPNG = ([[ '\r' + ["			"] + "title: '" + chartTitle + "',"] + '\r' + ["			"] +
 	    	["vAxis: {title: '" + label_col_a + "'},"] + '\r' + ["			"] +
 	    	["hAxis: {title: '" + label_col_b + "'},"] + '\r' + ["			"] +
 	    	["     	'width': " + chartWidth + ","] + '\r' + ["			"] +

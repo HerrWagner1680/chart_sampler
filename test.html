@@ -1,0 +1,36 @@
+<html>
+<head>
+	<script type='text/javascript' src='https://www.google.com/jsapi'></script>
+	<script type='text/javascript'>
+
+	google.load('visualization', '1', {packages:['corechart']});
+	google.setOnLoadCallback(drawChart);
+
+	function drawChart() {
+		var data = google.visualization.arrayToDataTable([
+			['Name','Length','Hello'],
+			['23',23,23],
+			['123',16,234],
+			['234',10,12],
+			['123',31,23]
+		]);
+
+		var options = {
+			title: 'Example',
+			vAxis: {title: 'Name'},
+			hAxis: {title: 'Length'},
+			     	'width': 500,
+			     	'height': 400,
+		};
+
+		var chart = new google.visualization.BarChart(document.getElementById('chart_material'));
+		chart.draw(data, options);
+	};
+
+	</script>
+</head>
+
+<body>
+	<div id='chart_material'></div>
+</body>
+</html>

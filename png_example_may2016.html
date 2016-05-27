@@ -34,15 +34,16 @@
 
       // Wait for the chart to finish drawing before calling the getImageURI() method.
       google.visualization.events.addListener(chart, 'ready', function () {
-        chart_div.innerHTML = '<img src="' + chart.getImageURI() + '">';
+        /* chart_div.innerHTML = '<img src="' + chart.getImageURI() + '">'; */
         //console.log(chart_div.innerHTML);
+        //console.log(chart.getImageURI())
 
         var yada = "yourtitlehere"
-        var shlub_jpg = document.getElementById("the_link_jpg");
+        //var shlub_jpg = document.getElementById("the_link_jpg");
         var shlub_png = document.getElementById("the_link_png");
-        shlub_jpg.href = chart.getImageURI();
+        //shlub_jpg.href = chart.getImageURI();
         shlub_png.href = chart.getImageURI();
-        shlub_jpg.download = yada + ".jpg"
+        //shlub_jpg.download = yada + ".jpg"
         shlub_png.download = yada + ".png"
       });
 
@@ -52,8 +53,8 @@
   }
   </script>
 
-<div id='chart_div'></div> 
-<a id='the_link_jpg' target="_blank" href="#" download="testXXX.jpg">JPG VERSION</a>
+<div id='chart_div' style="display: none;"></div> 
+<!-- a id='the_link_jpg' target="_blank" href="#" download="testXXX.jpg">JPG VERSION</a> -->
 <a id='the_link_png' target="_blank" href="#" download="testXXX.png">PNG VERSION</a>
 <a target="_blank" href="https://www.google.com/intl/en_com/images/srpr/logo3w.png" download="testXXX.jpg">DOWNLOAD ME!</a>
 

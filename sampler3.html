@@ -245,7 +245,7 @@
       </div>
 
         <br>
-        <a target="_blank" href="https://www.google.com/intl/en_com/images/srpr/logo3w.png" download="testXXX.jpg">DOWNLOAD ME!</a>
+        <!-- a target="_blank" href="https://www.google.com/intl/en_com/images/srpr/logo3w.png" download="testXXX.jpg">DOWNLOAD ME!</a> -->
         <br>
 
       <div id="export">  
@@ -256,11 +256,17 @@
         <!-- end of export code -->
         <br>
         <br>
+        <button title="ctrl + p" onclick="createPNG();">Download as PNG Image</button>
+        <!-- button title="ctrl + p" onclick="saveAsImg(document.getElementById('chart_div0'));">Download as PNG Image</button -->
 
-        <button title="ctrl + p" onclick="saveAsImg(document.getElementById('chart_div0'));">Download as PNG Image</button>
         <!-- button title="ctrl + p" onclick="saveAsImg(document.getElementById('chart_div0'));">Download as JPG Image</button -->
         <!-- button onclick="toImg(document.getElementById('chart_div0'), document.getElementById('svg'));">Convert to image</button> -->
         </div>
+
+        <!-- hidden PNG image to be used as source for image download -->
+        <div id='chart_div'></div> 
+        <!-- a id='the_link_jpg' target="_blank" href="#" download="testXXX.jpg">JPG VERSION</a> -->
+        <a id='the_link_png' target="_blank" href="#" download="testXXX.png">PNG VERSION</a>
         <br>
         <br>
         </div> <!-- end of WRAPPER div -->
@@ -401,13 +407,6 @@
             }; // END OF col_a_int while loop
         } // END OF function handleQueryResponse(response)
 
-        //function SheetRefresh() {  //--- no longer valid -- MAY 2016
-        //   	console.log("showing jUrl: " + jUrl);
-        //     //var asdf = new google.visualization;
-        //     //console.log(asdf)
-        //    var query = new google.visualization.Query(jUrl);
-        //    query.send(handleQueryResponse);
-        // }
 
         function ExampleJS(){
           	event.preventDefault();
@@ -422,11 +421,9 @@
               // var splitURL = jUrl.split("/");
               // console.log(splitURL);
               $('#spreadsheet_file_1').val(null) //clears the upload url window
-              //SheetRefresh(); //--- no longer valid -- MAY 2016
             }
          }
 
-        //SheetRefresh(); //--- no longer valid -- MAY 2016
 
     </script>
     <!-- script type="text/javascript" src="revised.js"></script -->
@@ -437,6 +434,7 @@
     <script type="text/javascript" src="add_rem_col_rows.js"></script>
     <script type="text/javascript" src="find_option_code.js"></script> 
     <script type="text/javascript" src="export_code2.js"></script>
+    <script type="text/javascript" src="create_png.js"></script>
 
   </body>
 </html>

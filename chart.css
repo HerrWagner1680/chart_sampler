@@ -333,3 +333,11 @@ th {
 	display: inline-block;
 	min-width: 242px;
 }
+
+#the_link_png {
+	display: none;
+}
+
+#chart_div {
+	display: none;
+}
